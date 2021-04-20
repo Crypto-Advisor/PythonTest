@@ -21,14 +21,20 @@ def squishB(val):
     else:
         return val
 
-def closeToBoundaryB(val):
+def closeToBoundaryB(val): #
     if val > 1:
         return 0
     elif val <= 0.5:
-        return val
+        return val 
     else:
         calc = 0.5 - np.power(0.5, (0.5/(val-0.5)))
         return calc
 
 for x in range(len(inputs)):
     print("Input:", inputs[x], " Out:" , closeToBoundaryB(squishB(inputs[x])))
+
+#find derivate and error of squish compared to actual value
+#multiply squished derivative and error
+#then multiply by the original input
+#dot prod (value from this ) plus original weight and will eventually go to correct value
+#over many iterations
